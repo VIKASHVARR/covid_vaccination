@@ -1,0 +1,39 @@
+<style>
+    .user{
+        
+        padding-top: 50px;
+        text-align: center;
+    }
+    .email{
+        padding-top: 20px;
+        text-align: center;
+    }
+
+</style>
+<style>
+    table, th, td {
+      border:1px solid black;
+    }
+    </style>
+<h4>
+    <div class="user">username:{{detail.username}}<br><br></div>
+    <div class ="email">email:{{detail.email}}</div>
+</h4>
+<center><h1>your travel history</h1></center>
+<table style="width:100%">
+    <tr>
+    <th>id</th>
+    <th>place</th>
+    <th>price</th>
+    <th>days</th>
+</tr>
+    
+{%for x in user%}
+<tr>
+      <td>{{x.name}}</td>
+      <td>{{x.destination}}</td>
+      <td>{{x.price}}</td>
+      <td>{{x.days}}</td>
+    </tr>
+{%endfor%}
+</table>

@@ -1,0 +1,40 @@
+<style>
+    .login{
+        font-style: italic;
+    }
+    .user{
+        font-display: auto;
+        padding-top: 50px;
+        
+    }
+</style>
+
+
+<div class="login">
+<center>
+    <h1>
+        LOGIN HERE
+    </h1>
+</center>
+</div>
+
+<div class="form" >
+     <form action="verify" method="post">
+        {%csrf_token%}
+        <center>
+        <div class="user">
+            Enter your user name:<input type="text" name="username"><br><br>
+            Enter the password  :<input type="text"name="password"><br><br>
+            <button type="submit">LOGIN</button>
+        </div></center>
+       
+     </form>
+</div>
+
+{% if messages %}
+{% for message in messages %}
+ <script>alert("{{ message }}")</script> 
+
+{% endfor %}
+
+{% endif %}

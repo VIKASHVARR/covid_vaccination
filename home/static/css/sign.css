@@ -1,0 +1,44 @@
+.text{
+    text-align: center;
+    font-size: larger;
+    font-style: italic;
+}
+
+.form {
+    background-color: lightgrey;
+    width: 200px;
+    border: 15px solid red;
+    padding: 50px;
+    margin-top: auto;
+    margin-left: auto;
+    margin-bottom: 40%;
+    margin-right: auto;
+  }
+
+
+.otpform{
+    background-color: lightgray;
+    width:200px;
+    border: 2px solid red;
+    padding:50px;
+    margin-left: 40%; 
+    margin-top: 10%;   
+}
+
+.resend{
+    margin-top: 50px;
+    font-size:xx-large ;
+}
+
+.text{
+    background-color: aliceblue;
+    font-weight: bolder;
+    font-style: oblique;
+    text-decoration-color: blue;
+}
+.body{
+    background-image: url("img/back.jpg");
+    background-repeat: no-repeat;
+    height: 100%;
+    background-size: cover;
+}

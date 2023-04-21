@@ -1,0 +1,29 @@
+{% load static %}
+<head>
+<link href="{%static 'css/sign.css'%}" rel="stylesheet">
+
+</head>
+<div class="body">
+<div class="text">
+<h1><center>confrim your account</center></h1></div>
+</head>
+
+<body >
+<div class="otpform">
+<form action="otp" method="post">
+    {%csrf_token%}
+    <center>enter the otp:<input type="text" name="otp_by_user"></center>
+    <center><button type="submit">CONFRIM</button></center>  
+    </form>
+   </div>
+</body>
+<div class="resend">
+<center><a href="send_otp"><button type="submit" > RESEND OTP</button></a></center>
+</div>
+</div>
+
+{% if messages %}
+{% for message in messages %}
+ <script>alert("{{ message }}")</script> 
+{% endfor %}
+{% endif %}

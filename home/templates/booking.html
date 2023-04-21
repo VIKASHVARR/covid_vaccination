@@ -1,0 +1,12 @@
+{%load static%}
+
+{%for x in display%}
+{{x.name}}
+{{x.price}}
+{{x.days}}
+ 
+<div class="image">
+    <img src="{{x.image.url}}" alt="my image">
+</div>
+<a href="payment"><button type="submit">MAKE PAYMENT</button></a>
+{%endfor%}

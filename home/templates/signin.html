@@ -1,0 +1,38 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>sign in page</title>
+    <link href="{%static 'css/sign.css'%}" rel="stylesheet">
+</head>
+<body>
+    <div class="text" >
+        <h1>you haven't registered yet!!register here to grab some exciting offers</h1>
+    </div>
+    <center><h2>Enter your personal details</h2></center>
+    <div class="form">
+    <form action="signin_verification" method="post">
+        {%csrf_token%}
+       your first name:<br><input type="text" placeholder="first name" name="first_name"><br><br>
+       your last name :<br><input type="text"placeholder="last name"name="last_name"> <br><br>
+       your username  :<br><input type="text"placeholder="user name"name="username">
+       *your username should be unique<br><br>
+       your email     :<br><input type="email"placeholder="email" name="email"><br><br>
+       create password:<br><input type="text"placeholder="password"name="password1"><br><br>
+       re-enter pass  :<br><input type="text"placeholder="password"name="password2"><br><br>
+       <button type="submit">SIGN IN</button>
+    </form>
+    </div>
+</body>
+</html>
+
+{% if messages %}
+{% for message in messages %}
+ <script>alert("{{ message }}")</script> 
+
+{% endfor %}
+
+{% endif %}

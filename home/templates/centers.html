@@ -1,0 +1,48 @@
+<style>
+    .container {
+        display: flex;
+        inset: 20px;
+        border: 2px solid black;
+        margin-top: 20px;
+        width: 1200px;
+        height: 200px;
+        /* justify-content: space-between; */
+    }
+    
+    .image {
+        margin: 10px 20px 0px 10px;
+    }
+    
+    .place {
+        margin-top: 20px;
+    }
+    
+    .container .button {
+        justify-content: flex-end;
+        display: flex;
+        position: absolute;
+        padding-top:140px;
+        padding-left:600px;
+    }
+    
+    .intro{
+        font-weight: bolder;
+        font-style: italic;
+        text-align: center;
+        font-size: larger;
+        padding-bottom: 20px;
+    }
+</style>
+
+<div class="conntainer">
+{%for dest in display%}
+<div class="container">
+    <div class="place">DISTRICT :{{dest.city}}<br><br>PLACE :{{dest.center_name}} <br><br>
+    vaccine :{{dest.vaccine}}<br><br>DOSE_AVAILABLE:{{dest.dose_avva}}</div>  
+    <div class="button">
+        <a href="{% url 'booking' %}?place={{dest.id}}"><button type="submit">GET TICKETS</button></a>
+    </div>  
+</div>
+</div>
+
+{%endfor %}

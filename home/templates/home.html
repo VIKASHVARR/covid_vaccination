@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <center><strong><h1>COVID VACCINATION BOOKING</strong><h1></center>
+        <title>Covid vaccination booking</title>
+    </head>
+    <style>
+        .signin{
+        display:inline-block;
+        font-size:200%;
+        text-align:center;
+        margin-top:20px;
+        padding-top:50px;
+        padding-left:100px;
+        padding-down:50px
+        }
+        .user{
+        display:inline-block;
+            font-size:200%;
+            text-align:center;
+            margin-top:20px;
+            padding-top:50px;
+            padding-left:900px; 
+            padding-down:50px;
+        }
+        .admin{
+        display:inline-block;
+        font-size:200%;
+        text-align:center;
+        padding-top:50px;
+        padding-left:100px;
+        padding-down:50px
+        }
+        .views{
+        display:inline-block;
+        font-size:200%;
+        text-align:center;
+        margin-top:20px;
+        padding-top:50px;
+        padding-left:800px;
+        padding-down:50px;
+        }
+        .logout{
+            padding-top:200px;
+            font-size:200%;
+        }
+    </style>
+
+    <body>
+        <div class="container">
+       <div class="signin"> <a href ="signin">signin</a></div>
+       <div class ="user"><a href ="user_login">login(user)</a></div>
+        </div>
+       <div class="container2">
+       <div class ="admin"><a href="admin">login(admin)</a></div>
+       <div class ="views"><a href ="district_views">view districts</a></div>
+       </div>
+       <div class="logout"><center><a href="logout">logout</a></center></div>
+    </body>
+
+</html>
+
+{%if messages%}
+{%for message in messages%}
+<script>alert('{{message}}')</script>
+{%endfor%}
+{%endif%}

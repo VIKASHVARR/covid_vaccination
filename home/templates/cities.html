@@ -1,0 +1,55 @@
+<style>
+.container {
+    display: flex;
+    inset: 20px;
+    border: 2px solid black;
+    margin-top: 20px;
+    width: 1200px;
+    height: 200px;
+    /* justify-content: space-between; */
+}
+
+
+.place {
+    margin-top: 20px;
+    padding-left=50px;
+}
+
+.container .button {
+    justify-content: flex-end;
+    display: flex;
+    position: absolute;
+    padding-top:140px;
+    padding-left:600px;
+}
+
+.intro{
+    font-weight: bolder;
+    font-style: italic;
+    text-align: center;
+    font-size: larger;
+    padding-left=50px;
+    padding-bottom: 20px;
+}
+</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>district</title>
+</head>
+<body>
+    {%for dest in dests%}
+    <div class="container">
+        <div class="place">DISTRICT :{{dest.name}}<br><br>DATE :{{dest.date}} <br><br>
+        TIMING :{{dest.timing}}<br><br>CITY_ID : {{dest.id}}<br><br></div> 
+        <div class="button">
+            <a href="{% url 'center' %}?place={{dest.id}}"><button type="submit">BOOK YOUR SLOT</button></a>
+        </div>     
+    </div>
+
+    {%endfor %}
+</body>
+</html>

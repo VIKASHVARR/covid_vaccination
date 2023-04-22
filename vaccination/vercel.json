@@ -1,0 +1,14 @@
+{
+    "builds": [
+    {
+    "src": "vaccination/wsgi.py",
+    "use": "@vercel/python"
+    }
+    ],
+    "routes": [
+    {
+    "src": "/(.*)",
+    "dest": "vaccination/wsgi.py"
+    }
+    ]
+    }

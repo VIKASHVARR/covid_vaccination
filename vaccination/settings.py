@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
+from django.core.wsgi import get_wsgi_application
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,8 +26,8 @@ SECRET_KEY = 'django-insecure-9olbbo4_(@-=wp#a%@95c2j746@%ts=nak+zus^wul&w41fg-_
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-ALLOWED_HOSTS = []
+WSGI_APPLICATION = 'vaccination.wsgi.application'
+ALLOWED_HOSTS = ["*",]
 
 
 # Application definition
@@ -69,8 +70,6 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'vaccination.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
@@ -78,13 +77,14 @@ WSGI_APPLICATION = 'vaccination.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'vaccine',
-        'HOST':'LOCALHOST',
+        'NAME': 'vaccination',
+        'HOST':'localhost',
         'PORT':'3306',
         'USER':'root',
         'PASSWORD':'Vanitha@24'
     }
 }
+
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS=True

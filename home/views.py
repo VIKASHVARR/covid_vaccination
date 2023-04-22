@@ -75,7 +75,7 @@ def verify(request):
             return render(request,"home.html",{'name':request.session['user']})
         else:
             messages.info(request,"invalid login")
-            return redirect("login")
+            return redirect("user_login")
         
 def district_views(request):
     try:

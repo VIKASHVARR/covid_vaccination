@@ -104,10 +104,10 @@ def logout(request):
   
 def booking(request):
     place=request.GET.get('place')
-    if place[0]==0:
+    obj=centers.objects.filter(id=place).values()
+    if obj[0]["doe_avva"]==0:
         messages.info(request,"sorry,all slots has been filled")
     else:
-        obj=centers.objects.filter(id=place).values()
         vacciner=list(name=request.session['user'],vaccine=obj[0]['vaccine'],area=obj[0]["center_name"])
         vacciner.save()
         b=(obj[0]["dose_avva"]) 

@@ -105,9 +105,13 @@ def logout(request):
 def booking(request):
     place=request.GET.get('place')
     obj=centers.objects.filter(id=place).values()
-    if obj[0]["doe_avva"]==0:
+    if list.objects.filter(name=request.session['user']).exists():
+        messages.info(request,"slot already booked for the user...book after 90 days")
+        return redirect("home")
+    if obj[0]["dose_avva"]==0:
         messages.info(request,"sorry,all slots has been filled")
     else:
+        print(obj)
         vacciner=list(name=request.session['user'],vaccine=obj[0]['vaccine'],area=obj[0]["center_name"])
         vacciner.save()
         b=(obj[0]["dose_avva"]) 
@@ -115,5 +119,6 @@ def booking(request):
         obj.update(dose_avva=a)
         messages.info(request,"your vaccination has been scheduled")
     return redirect('home')
+
 
         
